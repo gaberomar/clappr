@@ -12,17 +12,12 @@ var sv = getParam("sv");
 <html>
 <head>
 <meta charset="utf-8">
-<style>
-    body{-webkit-animation:-amp-start 0.5s steps(1,end) 0.1s 1 normal both;-moz-animation:-amp-start 0.5s steps(1,end) 0.1s 1 normal both;-ms-animation:-amp-start 0.5s steps(1,end) 0.1s 1 normal both;animation:-amp-start 0.5s steps(1,end) 0.1s 1 normal both}
-    @-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    @-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    @-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    @-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    *{font-family: &quot;Cairo&quot;,&quot;Segoe UI&quot;,&quot;Tahoma&quot; !important;}
-
-    @font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:400;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v3/SLXGc1nY6HkvalIkTpu0xg.woff2) format(&quot;woff2&quot;);unicode-range:U+0600-06FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE80-FEFC}@font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:400;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v3/SLXGc1nY6HkvalIvTpu0xg.woff2) format(&quot;woff2&quot;);unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:400;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v3/SLXGc1nY6HkvalIhTps.woff2) format(&quot;woff2&quot;);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:600;src:local(&quot;Cairo SemiBold&quot;),local(Cairo-SemiBold),url(https://fonts.gstatic.com/s/cairo/v3/SLXLc1nY6Hkvalr-ao6O59ZMaA.woff2) format(&quot;woff2&quot;);unicode-range:U+0600-06FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE80-FEFC}@font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:600;src:local(&quot;Cairo SemiBold&quot;),local(Cairo-SemiBold),url(https://fonts.gstatic.com/s/cairo/v3/SLXLc1nY6Hkvalr-ao6F59ZMaA.woff2) format(&quot;woff2&quot;);unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:&quot;Cairo&quot;;font-style:normal;font-weight:600;src:local(&quot;Cairo SemiBold&quot;),local(Cairo-SemiBold),url(https://fonts.gstatic.com/s/cairo/v3/SLXLc1nY6Hkvalr-ao6L59Y.woff2) format(&quot;woff2&quot;);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    *{font-family:&quot;Cairo&quot;;}
+ &lt;style type=&quot;text/css&quot;&gt;
+&lt;!-- /*<![CDATA[*/]]>
+<style type='text/css'>
+  body{-webkit-animation:-amp-start .5s steps(1,end) .1s 1 normal both;-moz-animation:-amp-start .5s steps(1,end) .1s 1 normal both;-ms-animation:-amp-start .5s steps(1,end) .1s 1 normal both;animation:-amp-start .5s steps(1,end) .1s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}*{font-family:&quot;Cairo&quot;,&quot;Segoe UI&quot;,&quot;Tahoma&quot;!important}@font-face{font-family:&#39;Cairo&#39;;font-style:normal;font-weight:400;font-display:swap;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v6/SLXGc1nY6HkvalIkTpu0xg.woff2) format(&quot;woff2&quot;);unicode-range:U+0600-06FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE80-FEFC}@font-face{font-family:&#39;Cairo&#39;;font-style:normal;font-weight:400;font-display:swap;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v6/SLXGc1nY6HkvalIvTpu0xg.woff2) format(&quot;woff2&quot;);unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:&#39;Cairo&#39;;font-style:normal;font-weight:400;font-display:swap;src:local(Cairo),local(Cairo-Regular),url(https://fonts.gstatic.com/s/cairo/v6/SLXGc1nY6HkvalIhTps.woff2) format(&quot;woff2&quot;);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+   
+ *{font-family:&quot;Cairo&quot;;}
     .sidenav{height:100vh;width:250px;position:fixed;top:0;right:-350px;background-color:#1e1e2b!important;overflow-x:hidden;transition:0.5s;z-index:999999999999999999999999;padding-top:45px}
     .sidenav.open{right:0}
     div#mop-icon{display:block;clear:both;overflow:hidden;width:100%;text-align:center}
@@ -58,7 +53,8 @@ var sv = getParam("sv");
 iframe#google_esf, iframe#google_shimpl {
     display: none !important;
 }
-  </style>
+
+</style>
 <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
