@@ -1,8 +1,5 @@
-﻿<div dir="rtl" style="text-align: right;" trbidi="on">
 
-<html>
-<head>
-<script type="7fd48e4e9b637a138f663eba-text/javascript">
+<script type="3c512a9a7eed17dced715b0a-text/javascript">
 function getParam ( sname )
 {
   var params = location.search.substr(location.search.indexOf("?")+1);
@@ -17,37 +14,59 @@ var sv = getParam("sv");
 <script type="text/javascript" src="//ustreamix.to//src//func.js?ver=1592053025"></script>
 <script type="text/javascript" src="//ustreamix.to//src//clappr/clappr.js?ver=1588175914"></script>
 <script type="text/javascript" src="//ustreamix.to/src/real.js?ver=1588175773"></script>
-</head>
-<body>
+<body style="margin:0;background:#000;">
+<div id="iframeDiv" style="width: 100%;">
+<div id="player"></div>
+<script type="3c512a9a7eed17dced715b0a-text/javascript">
 
-<div id="player">
-</div>
-
-<script type="7fd48e4e9b637a138f663eba-text/javascript">
-
-var playerElement = document.getElementById("player");
-var player = new Clappr.Player({
- height: "100%",
- width: "100%",
-  plugins: {
-    'core': [LevelSelector]
-  },
- hlsjsConfig: {
- p2pConfig: {
-            wsSignalerAddr: 'wss://cdg3.edge.tmed.pw',
-        
-        },
- xhrSetup: function(xhr, url) {
-  xhr.withCredentials = false;
- }
- 
- }
-});
-player.attachTo(playerElement);
-player.load({ source: sv, mimeType: 'application/vnd.apple.mpegurl'});
-player.play();
+if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Mobile Safari/i) || navigator.userAgent.match(/Blackberry/i)){
+    document.write("\<video style=\"z-index:2;width:100%;height:100%;background-color:#000;-o-object-fit:fill;object-fit:fill\" controls=\"controls\" autoplay=\"true\" preload=\"auto\" height=\"auto\" src=\""+sv+"\"\>\<\/video\>");
+} else {
+    player = new Clappr.Player({
+    source: sv,
+    plugins: [Clappr.FlasHLS],
+    parentId: '#player',
+    width: '100%',
+    height: '100%',
+    hideMediaControl: true,
+    autoPlay: true
+    });    
+}
 </script>
+<style type="text/css">
+body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.twitter-widget {
+    z-index: 70;
+    right: 10px;
+    transition: all .3s;
+    position: absolute;
+    top: 10px;
+}
 
-<script data-cf-settings="7fd48e4e9b637a138f663eba-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"></script>
-</body>
-</html></div>
+.media-control[data-media-control] .media-control-background[data-background]::before {
+    font-size: 2vw;
+    color: #fff;
+    text-align: center;
+    font-family:Changa,"Segoe UI";
+    font-weight: bold;
+content: " شاهد جمبع المبارايات علي موقع | كوره جي لايف ";
+}
+
+.media-control[data-media-control] .media-control-background[data-background] {
+    opacity: 1!important;
+}
+.media-control[data-media-control] .media-control-background[data-background] {
+    height: 15%!important;
+}
+
+.media-control[data-media-control] .media-control-layer[data-controls]{height:25px!important;background-color:rgba(0,0,0,.31)}.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-14px}
+.container[data-container] span{display:none}
+</style>
+<span style="background: transparent; box-sizing: border-box; color: white; font-size: 10px; font-weight: bold; height: 25px; padding: 0px 5px; position: absolute; right: 60px; top: 400px; width: 90px;"></span><img src="https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png" pagespeed_url_hash="b8e6b5a44e2403b" style="border: none; box-sizing: border-box; height: 30px; padding: 0px; position: absolute; right: 15px; top: 20px; vertical-align: middle; width: 90px;" />
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="3c512a9a7eed17dced715b0a-|49" defer=""></script>
+
