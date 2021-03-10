@@ -68,33 +68,26 @@ var sv = getParam("sv");
 
 if (window.peer5) window.peer5.configure({p2p: true});
 var playerElement = document.getElementById("player");
-
-    				var player = new Clappr.Player({
-				
-source: sv, mimeType: 'application/x-mpegURL',
-			       
+	var player = new Clappr.Player({
+				 parentId: "#player",
+source: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8", mimeType: 'application/x-mpegURL',			       
  plugins: [LevelSelector,   ErrorPlugin, Clappr.FlasHLS], 	
 				autoPlay: "true",
 				height: '100%',
 				width: '100%',
 				hideVolumeBar: true,				
-				mediacontrol: {seekbar: "#df600a", buttons: "#df600a"},
+				mediacontrol: {seekbar: "#f01fda", buttons: "#f01fda"},
 				position: "bottom-left", 
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-				hlsjsConfig: {
+				  playbackConfig: {
+		                crossorigin: 'use-credentials',
+                                 },
+                                 hlsjsConfig: {
 		                xhrSetup: function(xhr, url) {
 			         xhr.withCredentials = false;
-		                  }
-	                          },
-	                         playbackConfig: {
-		                crossorigin: 'use-credentials'
-	                          },
-				maxBufferLength: "20",
-				parentId: "#player"
-
-                                    }); 
-
-                          
+		                   }
+				  },
+                                  }); 
        
                          player.on(Clappr.Events.PLAYER_STOP, playerStop);
                                 function playerStop(){
