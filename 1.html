@@ -49,7 +49,7 @@ var sv = getParam("sv");
 let engine = new p2pml.hlsjs.Engine({segments: {swarmId: "allsportsicu04"},loader: {httpUseRanges:true, WaitForTracker: true, WaitForTrackerCounter:4500}});
 
 let player = new Clappr.Player({
-    source:sv,
+    source: sv,
     mimeType: 'application/x-mpegURL',
     parentId: '#player',
     mute: true,
