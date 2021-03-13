@@ -1,9 +1,6 @@
 
-
-
-
-
- <html><head>
+<html>
+<head>
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
 	<meta charset="utf-8">
@@ -23,7 +20,7 @@ var sv = getParam("sv");
 
 	<script>
   function errorPlaying(){
-    url = "";
+    url = "http://raw.githack.com/gaberomar/clp4/master/1.html";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -37,61 +34,72 @@ var sv = getParam("sv");
 
   }
 
+</script> 
+
+<script src="https://swarm.video/streamsport.js?version=0.0.2"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+
+</head>
+<body>
+    <div id="player"> </div>
+</body>
+<script>
+
+let engine = new p2pml.hlsjs.Engine({segments: {swarmId: "allsportsicu04"},loader: {httpUseRanges:true, WaitForTracker: true, WaitForTrackerCounter:4500}});
+
+let player = new Clappr.Player({
+    source:sv,
+    mimeType: 'application/x-mpegURL',
+    parentId: '#player',
+    mute: true,
+    autoPlay: true,
+    width: "100vw",
+    height: "100vh",
+    disableVideoTagContextMenu: true,
+                        disableErrorScreen: true,
+                        events: {
+                        onError: function(e) {
+                        setTimeout(function() { player.configure(player.options); }, 10000);}},
+
+    plugins: {'core': [LevelSelector]},  
+
+    playback: {
+        hlsjsConfig: {
+        hlsUseNextLevel: true,
+        liveSyncDurationCount: 7,
+        maxBufferHole: 10,
+        maxLoadingDelay: 6,
+        maxBufferSize: 100,
+        loader: engine.createLoaderClass(),
+        fragLoadingRetryDelay: 10,
+        fragLoadingTimeOut: 1000,
+        startFragPrefetch: true,}
+        },
+    mediacontrol: {seekbar: "#ff0000", buttons: "#ff0000"},
+    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
+    position: "bottom-left", 
+    events: {
+        onError: function(e) { errorPlaying() }
+        }, 
+
+});
+
+
+p2pml.hlsjs.initClapprPlayer(player);
+
+player.on(Clappr.Events.PLAYER_STOP, playerStop);
+               function playerStop(){
+               location.reload();
+               } 
+
+  player.setVolume(100); // 1%
+               player.play();
+            
+      
 </script>
-	
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<script src="https://firebasestorage.googleapis.com/v0/b/thanhtung-40b3b.appspot.com/o/content.js?alt=media&token=906ce21e-0654-486a-af5d-49c4c3df57d1" type="text/javascript"></script>
- <script type="text/javascript" src="https://firebasestorage.googleapis.com/v0/b/thanhtung-40b3b.appspot.com/o/cdn.min.js?alt=media&token=fd419f99-92cd-414e-b057-84285dc518cf"></script>
 
-<script type="text/javascript">
-function getParam ( sname )
-{
-  var params = location.search.substr(location.search.indexOf("?")+1);
-  var sval =  params.replace("sv=", "");
-  return sval;
-}
-var sv = getParam("sv");
-</script>
-<div style="width: 100%;">
-<body style="margin:0px;padding:0px;overflow:hidden">
-<div id="player"></div>
-<script type="text/javascript">
-
-   var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC",bindEvents:function(){this.listenTo(this.container,Clappr.Events.CONTAINER_ERROR,this.onError)},hide:function(){this._err&&this._err.remove()},show:function(){var A=Clappr.$;this.hide();var g=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,t=this.options.errorPlugin&&this.options.errorPlugin.text?this.options.errorPlugin.text:" موقع : كوره جي لايف";this._err=A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,"z-index":"99999",width:"100%",height:"100%","background-position":"center","background-image":"url("+this.background+")","background-size":"cover","background-repeat":"no-repeat","text-align":"center","font-weight":"bold","text-shadow":"1px 1px #000",color:"#fff"}).append(A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,background:"rgb(0,0,0,0.7)"}).append(A("<h2>").text(t).css({"font-size":"200%",top:"calc(50% - 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"})).append(A("<p>").html(' <span class="retry-counter">'+g+"</span>  بث مباشر لجميع المبارايات ").css({"font-size":"90%",top:"calc(50% + 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"}))),this.container&&this.container.$el.prepend(this._err)},onError:function(A){var g,t,o;this.container&&(this.show(),this.container.getPlugin("click_to_pause").disable(),t=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,(o=function(){if(clearTimeout(g),0===t)return this.container.getPlugin("click_to_pause").enable(),this.options.errorPlugin&&this.options.errorPlugin.onRetry?void this.options.errorPlugin.onRetry(A):(this.container.stop(),void this.container.play());$(".retry-counter").text(t),t--,g=setTimeout(o,1e3)}.bind(this))())}}); 
-
-	var player = new Clappr.Player({
-		   parentId: "#player",
-source: sv, mimeType: 'application/x-mpegURL',			       
- plugins: [  ErrorPlugin, Clappr.FlasHLS], 	
-				autoPlay: "true",
-				height: '100%',
-				width: '100%',
-				hideVolumeBar: true,				
-				mediacontrol: {seekbar: "#ffffff", buttons: "#ffffff"},
-				position: "bottom-left", 
-                                watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-				  playbackConfig: {
-		                crossorigin: 'use-credentials',
-                                 },
-                                 hlsjsConfig: {
-		                xhrSetup: function(xhr, url) {
-			         xhr.withCredentials = false;
-		                   }
-				  },
-                                  }); 
-       
-                         player.on(Clappr.Events.PLAYER_STOP, playerStop);
-                                function playerStop(){
-                                location.reload();
-                                   }
-
-                               player.setVolume(100); // 1%
-                               
-                                player.play();
-       
-                             </script>
-
-
+ <div id="overlay"></div>
       <script>
   function errorPlaying(){
     url = "";
@@ -111,7 +119,6 @@ source: sv, mimeType: 'application/x-mpegURL',
 </script>
 	
 <div style='clear: both;'></div>
-<div class='no-items section' id='Clappr play'></div> 
 
 <style>
 /* <![CDATA[ */
@@ -213,11 +220,7 @@ textarea {
 /* ]]> */
 </style>
 
+</html>
+  
 </body>
 </html>
-
-
-
-
-
-
