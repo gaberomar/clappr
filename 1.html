@@ -1,20 +1,18 @@
 
+
+
 <html>
 <head>
+<style id='page-skin-1' type='text/css'><!--
+*{margin:0; padding:0; overflow: hidden;}
+#player{width: 100vw; height: 100vh;}
+--></style>	
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
-<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
-	<meta charset="utf-8">
-	<script>
-function getParam ( sname )
-{
-  var params = location.search.substr(location.search.indexOf("?")+1);
-  var sval =  params.replace("sv=", "");
-  
-  return sval;
-}
-var sv = getParam("sv");
-
-</script>
+<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>	
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
 
 	 <div id="overlay"></div>
 
@@ -35,69 +33,61 @@ var sv = getParam("sv");
   }
 
 </script> 
-
-<script src="https://swarm.video/streamsport.js?version=0.0.2"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
-
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
 </head>
 <body>
-    <div id="player"> </div>
+      <div class="player"></div>
 </body>
-<script>
 
-let engine = new p2pml.hlsjs.Engine({segments: {swarmId: "allsportsicu04"},loader: {httpUseRanges:true, WaitForTracker: true, WaitForTrackerCounter:4500}});
+ <script>
+      (function () {
+        console.log('Clappr version ' + Clappr.version);
+        var sv = '';
 
-let player = new Clappr.Player({
-    source: sv,
-    mimeType: 'application/x-mpegURL',
-    parentId: '#player',
-    mute: true,
-    autoPlay: true,
-    width: "100vw",
-    height: "100vh",
-    disableVideoTagContextMenu: true,
-                        disableErrorScreen: true,
-                        events: {
-                        onError: function(e) {
-                        setTimeout(function() { player.configure(player.options); }, 10000);}},
+        var player = new Clappr.Player({
+          parentId: ".player",
+          source: sv,
+           mimeType: 'application/x-mpegURL',
+          disableKeyboardShortcuts: true,
+          disableVideoTagContextMenu: true,
+          autoSeekFromUrl: false,
+          hideVolumeBar: true,
+          width: '100%',
+          height: '100%',
+          autoPlay: !Clappr.Browser.isMobile,
+          playback: {
+            playInline: true,
+            recycleVideo: Clappr.Browser.isMobile,
+          },
+      
+          plugins: [
+            ClapprImaPlugin,
+          ],
+          imaPlugin: {
+            requestAdIfNoAutoplay: true,
+            disableNonLinearForIOS: true,
+            resetAdOnEnded: true,
+           
+          },
+ watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
+			position: 'bottom-left',
+ events: {
+              onError: function(e) { errorPlaying() },},
+        });
 
-    plugins: {'core': [LevelSelector]},  
-
-    playback: {
-        hlsjsConfig: {
-        hlsUseNextLevel: true,
-        liveSyncDurationCount: 7,
-        maxBufferHole: 10,
-        maxLoadingDelay: 6,
-        maxBufferSize: 100,
-        loader: engine.createLoaderClass(),
-        fragLoadingRetryDelay: 10,
-        fragLoadingTimeOut: 1000,
-        startFragPrefetch: true,}
-        },
-    mediacontrol: {seekbar: "#ff0000", buttons: "#ff0000"},
-    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-    position: "bottom-left", 
-    events: {
-        onError: function(e) { errorPlaying() }
-        }, 
-
-});
-
-
-p2pml.hlsjs.initClapprPlayer(player);
+      })();
 
 player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
                } 
 
-  player.setVolume(100); // 1%
-               player.play();
-            
-      
-</script>
+
+    </script>
+
+
+
 
  <div id="overlay"></div>
       <script>
