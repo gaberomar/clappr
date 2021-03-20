@@ -1,115 +1,121 @@
-
-
-
-<html>
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>Clappr</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<!-- Chrome, Firefox OS and Opera -->
+
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
 <style id='page-skin-1' type='text/css'><!--
-*{margin:0; padding:0; overflow: hidden;}
+*{margin:0; padding:0; }
 #player{width: 100vw; height: 100vh;}
---></style>	
-<style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
-<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>	
-<meta charset="utf-8">
-<meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	
+--></style>
 
-	 <div id="overlay"></div>
+	<style>/*<![CDATA[*/
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+  body *{font-family: 'Tajawal', sans-serif!important}
+/*]]>*/</style> 
 
-	<script>
-  function errorPlaying(){
-    url = "http://raw.githack.com/gaberomar/clp4/master/1.html";
-    var a = document.createElement("a");
-    if (a.click) {
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_self");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-    } else {
-        location.href = url;
-    }
-
-  }
-
-</script> 
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
 </head>
-<body>
-      <div class="player"></div>
-</body>
+<body style="margin:0;background:#000;">
+<div id="iframeDiv" style="width: 100%;">
+ <body onload="init()">
+<script>var WSreloadCounter=false,WSnTries=0,videoStarted = false, startMuted = startMuted(),mPlayer = 1,manifestLoaded = false,WSref='5ojlgx';function errorPlaying(){$(".stream-offline .counter").text(10);$(".stream-offline").css("display","table");if (!WSreloadCounter)WSreloadCounter=setInterval(function(){var a=$(".stream-offline .counter").text();if(a>1){a--;$(".stream-offline .counter").text(a)}else{ clearInterval(WSreloadCounter);WSreloadCounter=false;WSnTries++;if(WSnTries<10){WSreloadStream();}else{ window.location.reload() } }},1000)}function startMuted(){var b=/constructor/i.test(window.HTMLElement)||(function(c){return c.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(b){return true}if(window.chrome&&getChromeVersion()>=66){return true}var ff = navigator.userAgent.match(/firefox\/([0-9]{2,})/i);if( ff && parseInt( ff[1] )>=66 ){return true}var a=(navigator.userAgent.match(/Opera|OPR\//)?true:false);if(a){return true}return false}function getChromeVersion(){var b=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return b?parseInt(b[2],10):false};function abd(){WSreloadStream=function(){return};if(player)player.stop();$("#player").remove();clearInterval(WSreloadCounter);$("body").html('<div class="tb stream-offline" style="display:table"><div class="tb-col"><a href="/" target="_blank"><img src="/imgs/icon.png" /></a><h2>SANDBOX IFRAME NOT ALLOWED</h2><div style="padding-top: 0.8em">WATCH ON THE FOLLOWING LINK:</div><input value="http://' + location.hostname + '/live/5ojlgx" onclick="this.select()" type="text" style="width:280px;border:0;background:none;color:#12e5a8;margin-top:20px;font-size:15px;text-align:center;"/></div></div>') }</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/clappr/0.3.12/clappr.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/@clappr/hlsjs-playback@latest/dist/hlsjs-playback.min.js' type='text/javascript'></script>
+<script>
+	 var userAgent = navigator.userAgent || navigator.vendor || window.opera;var isMobile = (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(userAgent)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(userAgent.substr(0,4)));
+</script>	
+<script>
+function getParam ( sname )
+{
+ var params = location.search.substr(location.search.indexOf("?")+1);
+ var sval =  params.replace("sv=", "");
+ return sval;
+}
+var sv = getParam(" ");
+</script>
 
- <script>
-      (function () {
-        console.log('Clappr version ' + Clappr.version);
-        var sv = '';
-
-        var player = new Clappr.Player({
-          parentId: ".player",
-          source: sv,
-           mimeType: 'application/x-mpegURL',
-          disableKeyboardShortcuts: true,
-          disableVideoTagContextMenu: true,
-          autoSeekFromUrl: false,
-          hideVolumeBar: true,
-          width: '100%',
-          height: '100%',
-          autoPlay: !Clappr.Browser.isMobile,
-          playback: {
-            playInline: true,
-            recycleVideo: Clappr.Browser.isMobile,
-          },
-      
-          plugins: [
-            ClapprImaPlugin,
-          ],
-          imaPlugin: {
-            requestAdIfNoAutoplay: true,
-            disableNonLinearForIOS: true,
-            resetAdOnEnded: true,
-           
-          },
- watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-			position: 'bottom-left',
- events: {
-              onError: function(e) { errorPlaying() },},
+<script type='text/javascript'>
+        function getUrlVars() {
+          var vars = {};
+          var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+          vars[key] = value;
         });
+            return vars;
+        }
+        var link = getUrlVars()["src"];  	
+    </script>
 
-      })();
 
-player.on(Clappr.Events.PLAYER_STOP, playerStop);
+<div class="jwplayer jw-reset jw-skin-glow player live" id="player"></div>
+<script>
+
+   var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC",bindEvents:function(){this.listenTo(this.container,Clappr.Events.CONTAINER_ERROR,this.onError)},hide:function(){this._err&&this._err.remove()},show:function(){var A=Clappr.$;this.hide();var g=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,t=this.options.errorPlugin&&this.options.errorPlugin.text?this.options.errorPlugin.text:" موقع : كوره جي لايف";this._err=A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,"z-index":"99999",width:"100%",height:"100%","background-position":"center","background-image":"url("+this.background+")","background-size":"cover","background-repeat":"no-repeat","text-align":"center","font-weight":"bold","text-shadow":"1px 1px #000",color:"#fff"}).append(A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,background:"rgb(0,0,0,0.7)"}).append(A("<h2>").text(t).css({"font-size":"200%",top:"calc(50% - 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"})).append(A("<p>").html(' <span class="retry-counter">'+g+"</span>  بث مباشر لجميع المبارايات ").css({"font-size":"90%",top:"calc(50% + 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"}))),this.container&&this.container.$el.prepend(this._err)},onError:function(A){var g,t,o;this.container&&(this.show(),this.container.getPlugin("click_to_pause").disable(),t=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,(o=function(){if(clearTimeout(g),0===t)return this.container.getPlugin("click_to_pause").enable(),this.options.errorPlugin&&this.options.errorPlugin.onRetry?void this.options.errorPlugin.onRetry(A):(this.container.stop(),void this.container.play());$(".retry-counter").text(t),t--,g=setTimeout(o,1e3)}.bind(this))())}}); 
+   var player = new Clappr.Player(
+  {
+   sources: [{source: sv,}],
+    parentId: "#player",
+   height: '100%',
+                 width: '100%',     
+                settings: true,
+                                mute: false,
+                                autoPlay: true,
+                                hideVolumeBar: true, 
+			        html5: true, 
+ mimeType: "application/vnd.apple.mpegurl",
+  mediacontrol: {
+             seekbar: "#5D48B4",
+             buttons: "#5D48B4"
+               },
+    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',
+    plugins: [LevelSelector, ErrorPlugin, HlsjsPlayback, Clappr.FlasHLS], 
+    hlsUseNextLevel: false,
+    hlsMinimumDvrSize: 60,
+    hlsRecoverAttempts: 16,
+    playback: {
+      extrapolatedWindowNumSegments: 2,
+      triggerFatalErrorOnResourceDenied: false,
+      playback: {
+      hlsjsConfig: {
+        debug: true, 
+        enableworker: false,
+
+}
+ }
+    },
+
+ errorPlugin: {
+     timeToExpires: 2,
+    onRetry: function(e) {
+      player.configure({
+        source: sv,
+        autoPlay: true,
+      });
+    }
+  }, 
+ 
+  });
+   	    
+ player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
                } 
 
+  player.setVolume(100); // 1%
+               player.play();
+  
+function HrtlpUgett() {
+        return(["h","t","t","p",":","\/","\/","2","1","9",".","w","a","s","2","7",".","x","y","z",":","8","0","8","0","\/","h","l","s","\/","D","r","c","u","y","M","D","N","Y","F","2","0","1","9","0","9","0","1",".","m","3","u","8","?"].join("") + iatrSarglyeubrsUAeanr.join("") + document.getElementById("fgihketricButSnsaa").innerHTML);
+    } 
+document.write("Not supported :(");
 
-    </script>
-
-
-
-
- <div id="overlay"></div>
-      <script>
-  function errorPlaying(){
-    url = "";
-    var a = document.createElement("a");
-    if (a.click) {
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_self");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-    } else {
-        location.href = url;
-    }
-
-  }
-
-</script>
-	
-<div style='clear: both;'></div>
-
+ (function(open){XMLHttpRequest.prototype.open=function(method,url,async,user,pass){if(url.indexOf('serve.key') != -1){rewrittenUrl = url.replace("https", "https://netnr-proxy.openode.io/https");}else{rewrittenUrl=url;}
+open.call(this,method,rewrittenUrl,async,user,pass);};})(XMLHttpRequest.prototype.open);
+  </script>
+<div class='no-items section' id='clappr'></div>
 <style>
 /* <![CDATA[ */
 
@@ -126,11 +132,11 @@ jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left
    .
 
 /*]]>*/</style>
-	
+	 
 <style>
 /* <![CDATA[ */
 
-    body { overflow: hidden; height: 100%; margin: 0px; padding: 0px; } .twitter-widget { z-index: 70; right: 10px; transition: all .3s; position: absolute; top: 10px; }
+	body { overflow: hidden; height: 100%; margin: 0px; padding: 0px; } .twitter-widget { z-index: 70; right: 10px; transition: all .3s; position: absolute; top: 10px; }
 	#showshare1 {
     position: fixed;
     right: 0;
@@ -210,7 +216,5 @@ textarea {
 /* ]]> */
 </style>
 
-</html>
-  
 </body>
 </html>
