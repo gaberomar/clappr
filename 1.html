@@ -2,10 +2,13 @@
 
 
  <html><head>
-<style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
-<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
 	<meta charset="utf-8">
-	<script>
+	 <meta name="robots" content="noindex, follow"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
+	<style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
+	<script type="c30a1314c00a05d7f71b3473-text/javascript">
 function getParam ( sname )
 {
   let params = location.search.substr(location.search.indexOf("?")+1);
@@ -16,9 +19,42 @@ function getParam ( sname )
 let sv = getParam("sv");
 
 </script>
+<script type="c30a1314c00a05d7f71b3473-text/javascript">
 
+            function jsasync(Src) {
+                var element = document.createElement("script");
+                element.src = Src;
+                document.body.appendChild(element);
+            }
+
+            $(document).ready(function () {
+
+                console.log(top.location);
+
+                $('.fpi').click(function (e) {
+                    e.preventDefault();
+                    window.open('', '_blank');
+                });
+
+                setInterval(function () {
+                    $('#google_xads_block_*').remove();
+
+                }, 500);
+                $('*[data-t="l"]').click(function () {
+                    window.open($(this).attr('data-h'), '_blank');
+                    return;
+                });
+                $('.mata_close').click(function () {
+                    if ($(this).hasClass('c2')) {
+                        $('.mata').remove();
+                    } else {
+                        $(this).addClass('c2');
+                    }
+                });
+                            });
+        </script>
 	<div id="overlay"></div>
-<script>
+<script type="c30a1314c00a05d7f71b3473-text/javascript">
   function errorPlaying(){
     url = "";
     let a = document.createElement("a");
@@ -36,89 +72,145 @@ let sv = getParam("sv");
 
 
 </script> 
+	</head> 
+<body class="t_hls">
 
-<script src='https://cdn.jsdelivr.net/clappr/latest/clappr.min.js' type="text/javascript"></script>
-<script src='https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js' type="text/javascript"></script>
-<script src='https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js' type="text/javascript"></script>
-<script type="text/javascript">
-function getParam ( sname )
-{
- let params = location.search.substr(location.search.indexOf("?")+1);
-  let sval =  params.replace("sv=", "");
-  return sval;
-}
-let sv = getParam("sv");
-</script>
+<div class="stream_code">
+<div class="code_area">
+<div class="code_button_in_stream"></div>
+<div class="player-tip"></div>
+<div class="str_c" id="player">
+<script type="c30a1314c00a05d7f71b3473-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script type="c30a1314c00a05d7f71b3473-text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script type="c30a1314c00a05d7f71b3473-text/javascript" src="https://cdn.jsdelivr.net/gh/video-dev/clappr-rtmp-plugin@latest/dist/rtmp.min.js"></script>
 
-<div style="width: 100%;">
-<body style="margin:0px;padding:0px;overflow:hidden">
-
-<div id="player"></div>
- 
-<script type="text/javascript">
-
-let ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC",bindEvents:function(){this.listenTo(this.container,Clappr.Events.CONTAINER_ERROR,this.onError)},hide:function(){this._err&&this._err.remove()},show:function(){var A=Clappr.$;this.hide();var g=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,t=this.options.errorPlugin&&this.options.errorPlugin.text?this.options.errorPlugin.text:" موقع : كوره جي لايف";this._err=A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,"z-index":"99999",width:"100%",height:"100%","background-position":"center","background-image":"url("+this.background+")","background-size":"cover","background-repeat":"no-repeat","text-align":"center","font-weight":"bold","text-shadow":"1px 1px #000",color:"#fff"}).append(A("<div>").css({position:"absolute",bottom:0,right:0,left:0,top:0,background:"rgb(0,0,0,0.7)"}).append(A("<h2>").text(t).css({"font-size":"200%",top:"calc(50% - 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"})).append(A("<p>").html(' <span class="retry-counter">'+g+"</span>  بث مباشر لجميع المبارايات ").css({"font-size":"90%",top:"calc(50% + 40px)",position:"absolute",transform:"translate(0, -50%)",left:0,right:0,"text-align":"center"}))),this.container&&this.container.$el.prepend(this._err)},onError:function(A){var g,t,o;this.container&&(this.show(),this.container.getPlugin("click_to_pause").disable(),t=this.options.errorPlugin&&this.options.errorPlugin.timeToExpires?this.options.errorPlugin.timeToExpires:10,(o=function(){if(clearTimeout(g),0===t)return this.container.getPlugin("click_to_pause").enable(),this.options.errorPlugin&&this.options.errorPlugin.onRetry?void this.options.errorPlugin.onRetry(A):(this.container.stop(),void this.container.play());$(".retry-counter").text(t),t--,g=setTimeout(o,1e3)}.bind(this))())}}); 
-let playerElement = document.getElementById("player");
-let player = new Clappr.Player({
-   source: sv,
-   plugins: [LevelSelector, ChromecastPlugin,  ErrorPlugin, Clappr.FlasHLS], 
-   autoPlay:true,  
-   parentId: "#player",
-   hideVolumeBar: true,
-   height: '100%',
-   width: '100%', 
-   position: "bottom-left",   
-   watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
-   mediacontrol: {seekbar: "rgba(0,255,131)", buttons: "rgba(0,255,131)"},  
-   chromecast: {
-   appId: '9DFB77C0',
-   contentType: 'video/m3u8',
-   media: {
-   type: ChromecastPlugin.Movie,
-   title: 'Awesome Hot Air Balloon Slackline',
-   subtitle: 'You won\'t get much closer to Skylining than this!'
-          },
-   customData: {
-   licenseURL: 'http://widevine/yourLicenseServer'
-          }
-         },
-     events: {
-            onError: function(e) { errorPlaying() }
-             },
-        });
-
-
-player.on(Clappr.Events.PLAYER_STOP, playerStop);
+<script type="c30a1314c00a05d7f71b3473-text/javascript">var player = new Clappr.Player({source: sv,
+		plugins: {
+                    'core': [LevelSelector],
+                    'playback': [RTMP]
+                  },autoPlay: true,   hideVolumeBar: true, width:"100%", height:"100%",   mimeType: "application/vnd.apple.mpegurl",parentId: "#player", position: "bottom-left",   
+   watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", });
+ player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
-               } 
-
-  player.setVolume(100); // 1%
+                }
+    
+               player.setVolume(100); // 1%
                player.play();
-       
-   
-    </script>
-
-<script>
-  function errorPlaying(){
-    url = "";
-   let a = document.createElement("a");
-    if (a.click) {
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_self");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-    } else {
-        location.href = url;
-    }
-
-  }
-
 </script>
-	
+	</div></div></div>
 <div style='clear: both;'></div>
 <div class='no-items section' id='Clappr play'></div> 
+<script>
+function togglePlayPauseNew() {
+	// If the Player is currently paused or has ended
+	if (Player.paused) {
+		// Change the button to be a pause button
+		changeButtonType(playPauseBtn, 'pause');
+    	$(".fp-play").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-play").toggleClass("fp-visible"); }, 300);	
+		// Play the media
+		Player.play();
+	}
+	// Otherwise it must currently be playing
+	else {
+		changeButtonType(playPauseBtn, 'play');	
+    	$(".fp-pause").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-pause").toggleClass("fp-visible"); }, 300);
+		Player.pause();
+	}
+}
+var vidElem = document.getElementById('Player');
+$("#fadein").one("click", function () {
+	vidElem.muted = false;
+    vidElem.volume = 1.0;
+	document.getElementById("prvdiv").className = "fp-color";
+	document.getElementById("vtordiv").className = "fp-color";
+	document.getElementById("tretdiv").className = "fp-color";
+	document.getElementById("cetvrtdiv").className = "fp-color";
+	document.getElementById("pettidiv").className = "fp-color";
+	document.getElementById("sestidiv").className = "fp-color";
+	document.getElementById("sedmidiv").className = "fp-color";
+});
+
+$(document).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+    var event = state ? 'FullscreenOn' : 'FullscreenOff';
+    if(event === 'FullscreenOff') {
+   		document.getElementById("player").className = "flowplayer fp-slim";
+    } 	else {
+
+   		}
+});
+
+$(".flowplayer").mouseenter(function(){
+    clearTimeout($(this).data('timeoutId'));
+    $(this).find(".flowplayer").fadeIn("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseover";
+		$(".fp-controls").css("display", "inline-flex");
+		$(".logo_overlay").css("display", "block");
+}).mouseleave(function(){
+    var someElement = $(this),
+        timeoutId = setTimeout(function(){
+            someElement.find(".flowplayer").fadeOut("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseout";
+		$(".fp-controls").css("display", "none");
+		$(".logo_overlay").css("display", "none");
+        }, 1000);
+    //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
+    someElement.data('timeoutId', timeoutId); 
+});
+
+
+</script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.media-control.live[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-2[data-seekbar]{background-color:#ff0101!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar]{height:3px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar] .bar-scrubber-icon[data-seekbar]{display:none!important}
+.dvr-controls[data-dvr-controls] .live-info{font-size:0;margin-left:85px}
+.dvr-controls[data-dvr-controls] .live-info:after{content:"Live";font-size:12px;font-weight:100;margin-left:5px}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume]{float:left!important;position:absolute;left:60px;top:-6px}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-right-panel[data-media-control]{position:initial!important;top:initial!important;right:initial!important;height:initial!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen]{position:absolute;right:0;top:0}
+.level_selector[data-level-selector]{position:absolute!important;top:-2px!important;right:125px!important}
+.media-control[data-media-control] .media-control-layer[data-controls]{height:20px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator]{background:url(https://3.bp.blogspot.com/-DufHB9HGWkA/W_btZgp8TVI/AAAAAAAALrQ/JCwzpk485fIBY8QNjCI9LcjJC4ofexoYgCLcBGAs/s1600/youtube.png) center center/100% no-repeat;width:55px;display:block!important;opacity:inherit;position:absolute;right:50px;top:2px;background-size:100% 100%;height:17px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator] svg{opacity:0}
+.level_selector[data-level-selector] button{font-size:0!important;background:url(https://3.bp.blogspot.com/-zetFuQ36xLo/W_brDTdM6yI/AAAAAAAALrE/ETrOqtTKj3ozXXIBbj_zwaiTNzpd1hn0ACLcBGAs/s1600/settings.png) center center/100% no-repeat;display:block!important;opacity:inherit;width:17px;height:17px;cursor:pointer}
+.media-control[data-media-control]{display:block!important}
+.media-control[data-media-control] .media-control-icon{opacity:1!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button svg path{fill:#fff!important}
+button.media-control-button.media-control-icon.stopped svg{height:16px!important;margin-top:4px}
+.dvr-controls[data-dvr-controls]{line-height:19px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume] svg{background:url(https://2.bp.blogspot.com/-u2_Nt6rchF4/W_b0u__k7VI/AAAAAAAALrc/NOkDQStsZb8eYiGOvrBcmLg4BThm38XkwCLcBGAs/s1600/reduced-volume.png) center center/100% no-repeat;width:16px;position:absolute!important;top:8px!important;background-size:100% 100%;height:14px!important;opacity:4}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume]{opacity:1!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume] svg path{opacity:0}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .drawer-icon-container[data-volume] .drawer-icon[data-volume].muted svg{background:url(https://1.bp.blogspot.com/-3ktSarGTAPs/W_b27RSZJrI/AAAAAAAALro/ClQo6SXU0dIt0FmYlU2IvBeTOW1pzEZHQCLcBGAs/s1600/volume-off-indicator.png) center center/100% no-repeat}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume] .segmented-bar-element[data-volume]:hover{transform:scaleY(1)!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume] .segmented-bar-element[data-volume]{padding-left:0!important;height:3px!important;background-color:#fff;box-shadow:rgb(255,255,255) 2px 0 0 inset!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .drawer-container[data-volume] .bar-container[data-volume]{top:11px!important;left:-5px}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-1[data-seekbar]{width:100%!important;right:10px}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar]{width:initial!important;margin-right:10px;margin-left:10px}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-left-panel[data-media-control]{left:10px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-22px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-position]{margin:0 7px 0 90px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-duration],.media-control[data-media-control] .media-control-layer[data-controls] .media-control-indicator[data-position]{font-size:14px!important;margin-top:-6px!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button svg{height:18px!important;margin-top:0!important}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen]{background:url(https://3.bp.blogspot.com/-SeTV9Zz6AYk/W_cOg19RtXI/AAAAAAAALsA/f4YIrvL5vCgj3lszpHTM4CZ2i5eebI0FgCLcBGAs/s1600/compress.png) center center/100% no-repeat;width:19px;position:absolute;right:15px;top:0;background-size:100% 100%}
+.media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-fullscreen] svg{opacity:0!important}
+.level_selector[data-level-selector]>ul{bottom:38px!important;border:0!important;background:rgba(28,28,28,0.9)!important;border-radius:2px}
+.level_selector[data-level-selector] li a{color:#fff!important;padding:9px 45px 9px 10px!important;float:left;width:100%;text-align:left;letter-spacing:2px;font-size:13px}
+.level_selector[data-level-selector] li a:hover{background-color:#313131!important}
+.level_selector[data-level-selector] li.current a{color:#fff!important}
+.level_selector[data-level-selector] li.current a:before{content:'\f00c';font-family:FontAwesome;position:absolute;right:11px}
+.level_selector[data-level-selector] li:nth-child(1) a{font-size:0}
+.level_selector[data-level-selector] li:nth-child(1) a:before{content:'Auto';font-size:13px}
+.spinner-three-bounce[data-spinner]>div{display:none!important}
+</style>
 
 <style>
 /* <![CDATA[ */
@@ -132,7 +224,7 @@ player.on(Clappr.Events.PLAYER_STOP, playerStop);
 [data-watermark] img { max-width: 100%!important; }
 [data-watermark] {width: 22%!important;}
   
-jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#c9c7c7;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"في حالة توقف القناة اضغط على زرار تحديث";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:2vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 90%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; }
+jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#c9c7c7;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:2vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 90%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; }
    .
 
 /*]]>*/</style>
@@ -219,6 +311,8 @@ textarea {
 }
 /* ]]> */
 </style>
+	
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c30a1314c00a05d7f71b3473-|49" defer=""></script>
 
 </body>
 </html>
