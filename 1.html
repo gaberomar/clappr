@@ -1,106 +1,86 @@
 
 
 
-<html><head> 
-	<meta charset="utf-8">
-	 <meta name="robots" content="noindex, follow"> 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
-	<style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
-	<script type="bdb38791070e20a1557590ca-text/javascript">
+		    
+								
+<style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style>	
+<style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
+ <script type="bdb38791070e20a1557590ca-text/javascript">
 function getParam ( sname )
 {
-  let params = location.search.substr(location.search.indexOf("?")+1);
-  let sval =  params.replace("sv=", "");
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
   
   return sval;
 }
-let sv = getParam("sv");
+var sv = getParam("sv");
 
 </script>
-	
-<script type="bdb38791070e20a1557590ca-text/javascript">
+<link href="https://easysite.one/z/Css/LayoutDefaul.css" rel='stylesheet' type='text/css' />
 
-            function jsasync(Src) {
-                var element = document.createElement("script");
-                element.src = Src;
-                document.body.appendChild(element);
-            }
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Expires" content="0" /> 
+<meta http-equiv="Pragma" content="no-cache" /> 
+<meta http-equiv="Cache-Control" content="no-cache"/>
+</head>
 
-            $(document).ready(function () {
-
-                console.log(top.location);
-
-                $('.fpi').click(function (e) {
-                    e.preventDefault();
-                    window.open('', '_blank');
-                });
-
-                setInterval(function () {
-                    $('#google_xads_block_*').remove();
-
-                }, 500);
-                $('*[data-t="l"]').click(function () {
-                    window.open($(this).attr('data-h'), '_blank');
-                    return;
-                });
-                $('.mata_close').click(function () {
-                    if ($(this).hasClass('c2')) {
-                        $('.mata').remove();
-                    } else {
-                        $(this).addClass('c2');
-                    }
-                });
-                            });
-        </script>
-	<div id="overlay"></div>
-<script type="bdb38791070e20a1557590ca-text/javascript">
-  function errorPlaying(){
-    url = "";
-    let a = document.createElement("a");
-    if (a.click) {
-        a.setAttribute("href", url);
-        a.setAttribute("target", "_self");
-        a.style.display = "none";
-        document.body.appendChild(a);
-        a.click();
-    } else {
-        location.href = url;
-    }
-
-  }
-
-
-</script> 
-	</head> 
-<body class="t_hls">
-<div class="stream_code">
-<div class="code_area">
-<div class="code_button_in_stream"></div>
-<div class="str_c" id="player">
-<script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <center>
+   <script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
 <script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/gh/video-dev/clappr-rtmp-plugin@latest/dist/rtmp.min.js"></script>
-<script type="bdb38791070e20a1557590ca-text/javascript">var player = new Clappr.Player({source: sv,
-		plugins: {
+<link href="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.css" rel="stylesheet" type="text/css" media="screen">
+
+</head>
+<body>
+
+  <body style="margin: 0px; padding: 0px">
+  <div style="position:relative"></div>
+  <div id="adcode"></div>
+  <div id="unmute">تشغيل الصوت</div>
+  <div id="Player"></div>
+  <div id="error-message"><h2>STREAM IS OFFLINE</h2><p>Retrying in <span>10</span> Secondi ...</p><a href="/" target="_blank"><img src="https://lh3.googleusercontent.com/-KvhNPHP1Mus/YKIAwFkDn6I/AAAAAAAAM94/l3RcFBVGCSYiY80fy7DZSC8Du8knZVoCgCLcBGAsYHQ/s300-w300/koragtv.png" /></a></div>
+ 
+ <script type="bdb38791070e20a1557590ca-text/javascript">var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
+  player=new Clappr.Player
+  ({parentId:"#Player",source: sv,
+  autoPlay:true,
+  mute:startMuted(),
+  width:"100%",
+  height:"100%", 
+  stretching:"uniform", 
+  mimeType:"application/x-mpegURL", 
+   hideVolumeBar: true, 
+    watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
+            position  : "bottom-left",
+  plugins: {
                     'core': [LevelSelector],
                     'playback': [RTMP]
-                  },autoPlay: true,   hideVolumeBar: true, width:"100%", height:"100%",   mimeType: "application/vnd.apple.mpegurl",parentId: "#player", position: "bottom-left",   
-   watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", });
- player.on(Clappr.Events.PLAYER_STOP, playerStop);
-               function playerStop(){
-               location.reload();
-                }
-    
-               player.setVolume(100); // 1%
-               player.play();
-</script>
-	</div></div></div>
-<div style='clear: both;'></div>
-<div class='no-items section' id='Clappr play'></div> 
-
+                  },events:{onError:function(e){playError()},onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}else{unmuteBtn.style.display="block"}}},});
+  function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
+  player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
+  var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
+  
 <style>
+/* <![CDATA[ */
+
+[data-watermark] img { max-width: 170%!important; }
+ 
+[data-watermark-bottom-left] {
+    bottom: 16px!important;
+    left: 10px!important;} 
+
+[data-watermark] img { max-width: 100%!important; }
+[data-watermark] {width: 22%!important;}
+  
+jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#c9c7c7;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:2vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 90%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; }
+   .
+
+/*]]>*/</style>
+
+ <style>
 * {
   margin: 0;
   padding: 0;
@@ -148,23 +128,6 @@ button.media-control-button.media-control-icon.stopped svg{height:16px!important
 .level_selector[data-level-selector] li:nth-child(1) a:before{content:'Auto';font-size:13px}
 .spinner-three-bounce[data-spinner]>div{display:none!important}
 </style>
-
-<style>
-/* <![CDATA[ */
-
-[data-watermark] img { max-width: 170%!important; }
- 
-[data-watermark-bottom-left] {
-    bottom: 16px!important;
-    left: 10px!important;} 
-
-[data-watermark] img { max-width: 100%!important; }
-[data-watermark] {width: 22%!important;}
-  
-jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#c9c7c7;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:2vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 90%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; }
-   .
-
-/*]]>*/</style>
 	
 <style>
 /* <![CDATA[ */
@@ -181,6 +144,82 @@ jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left
 }
 /* ]]> */
 </style>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script>
+	 <script type="bdb38791070e20a1557590ca-text/javascript">
+function togglePlayPauseNew() {
+	// If the Player is currently paused or has ended
+	if (Player.paused) {
+		// Change the button to be a pause button
+		changeButtonType(playPauseBtn, 'pause');
+    	$(".fp-play").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-play").toggleClass("fp-visible"); }, 300);	
+		// Play the media
+		Player.play();
+	}
+	// Otherwise it must currently be playing
+	else {
+		changeButtonType(playPauseBtn, 'play');	
+    	$(".fp-pause").toggleClass("fp-visible");
+    	setTimeout(function(){ $(".fp-pause").toggleClass("fp-visible"); }, 300);
+		Player.pause();
+	}
+}
+var vidElem = document.getElementById('Player');
+$("#fadein").one("click", function () {
+	vidElem.muted = false;
+    vidElem.volume = 1.0;
+	document.getElementById("prvdiv").className = "fp-color";
+	document.getElementById("vtordiv").className = "fp-color";
+	document.getElementById("tretdiv").className = "fp-color";
+	document.getElementById("cetvrtdiv").className = "fp-color";
+	document.getElementById("pettidiv").className = "fp-color";
+	document.getElementById("sestidiv").className = "fp-color";
+	document.getElementById("sedmidiv").className = "fp-color";
+});
+
+$(document).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+    var event = state ? 'FullscreenOn' : 'FullscreenOff';
+    if(event === 'FullscreenOff') {
+   		document.getElementById("player").className = "flowplayer fp-slim";
+    } 	else {
+
+   		}
+});
+
+$(".flowplayer").mouseenter(function(){
+    clearTimeout($(this).data('timeoutId'));
+    $(this).find(".flowplayer").fadeIn("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseover";
+		$(".fp-controls").css("display", "inline-flex");
+		$(".logo_overlay").css("display", "block");
+}).mouseleave(function(){
+    var someElement = $(this),
+        timeoutId = setTimeout(function(){
+            someElement.find(".flowplayer").fadeOut("slow");
+   		document.getElementById("player").className = "flowplayer fp-slim is-mouseout";
+		$(".fp-controls").css("display", "none");
+		$(".logo_overlay").css("display", "none");
+        }, 1000);
+    //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
+    someElement.data('timeoutId', timeoutId); 
+});
+
+
+</script> 
+	 <script type="bdb38791070e20a1557590ca-text/javascript">/* <![CDATA[ */
+$(function(){var $allVideos=$(&quot;.responsive-content iframe, .responsive-content object, .responsive-content embed&quot;);$allVideos.each(function(){$(this).attr(&#39;data-aspectRatio&#39;,this.height / this.width).removeAttr(&#39;height&#39;).removeAttr(&#39;width&#39;);});$(window).resize(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();$(window).load(function(){$allVideos.each(function(){var newWidth=$(this).closest(&#39;.responsive-content&#39;).width();var $el=$(this);$el.width(newWidth).height(newWidth*$el.attr(&#39;data-aspectRatio&#39;));});}).resize();});
+//]]>
+</script> 
+	 <script type="bdb38791070e20a1557590ca-text/javascript">
+//<![CDATA[
+function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest();xmlhttp.open("GET",link,!1);xmlhttp.send();src=xmlhttp.responseText}else src=link;player=videojs("restre");player.ready(function(){player.src({src:src,type:"application/x-mpegURL"})});player.play()}
+ function reload(i){if(player.paused()&&player.error_!=null){if(i<link.length){play(link[i])}else{clearInterval(interval);document.write
+//]]>
+</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script> 
+
+ 
 </body>
-</html>
+
+ 
+
